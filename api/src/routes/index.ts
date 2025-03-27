@@ -1,0 +1,5 @@
+export { default as user } from './UserRoute'
+export { default as auth } from './AuthRoutes'
+export { default as post } from './PostRoute'
+export { default as comment } from './CommentRoutes'
+export { default as analytics } from './AnalyticsRoutes' 

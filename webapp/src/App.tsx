@@ -14,13 +14,13 @@ import { Footer } from './components/Footer';
 import { AuthPage } from './components/auth/AuthPage';
 import { DashboardLayout } from './components/dashboard/DashboardLayout';
 import { DashboardHome } from './components/dashboard/DashboardHome';
-import { PostsList } from './components/dashboard/PostsList';
-import { CreatePost } from './components/dashboard/CreatePost';
-import { Schedule } from './components/dashboard/Schedule';
-import { Analytics } from './components/dashboard/Analytics';
-import { Messages } from './components/dashboard/Messages';
-import { Settings } from './components/dashboard/Settings';
-import { Support } from './components/dashboard/Support';
+// import { PostsList } from './components/dashboard/PostsList';
+// import { CreatePost } from './components/dashboard/CreatePost';
+// import { Schedule } from './components/dashboard/Schedule';
+// import { Analytics } from './components/dashboard/Analytics';
+// import { Messages } from './components/dashboard/Messages';
+// import { Settings } from './components/dashboard/Settings';
+// import { Support } from './components/dashboard/Support';
 
 function LandingPage() {
   return (
@@ -50,13 +50,13 @@ function App() {
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<DashboardHome />} />
-          <Route path="posts" element={<PostsList />} />
+          {/* <Route path="posts" element={<PostsList />} />
           <Route path="create" element={<CreatePost />} />
           <Route path="schedule" element={<Schedule />} />
           <Route path="analytics" element={<Analytics />} />
           <Route path="messages" element={<Messages />} />
           <Route path="settings" element={<Settings />} />
-          <Route path="support" element={<Support />} />
+          <Route path="support" element={<Support />} /> */}
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
