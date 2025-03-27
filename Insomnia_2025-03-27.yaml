@@ -1,0 +1,286 @@
+type: collection.insomnia.rest/5.0
+name: SocialAPP AI
+meta:
+  id: wrk_a74844c048714c15b293fd85f7bd1c29
+  created: 1743083787055
+  modified: 1743083787055
+collection:
+  - name: User
+    meta:
+      id: fld_298ed91cd5c04bc9b7d9431c15383e0b
+      created: 1743083914707
+      modified: 1743083914707
+      sortKey: -1743083914707
+    children:
+      - url: "{{ _.baseHr }}/users"
+        name: Get all
+        meta:
+          id: req_486cfa414cbd4711beb9b61bf53cb230
+          created: 1743083921811
+          modified: 1743098685839
+          isPrivate: false
+          sortKey: -1743083921811
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseHr }}/users"
+        name: Get by Id
+        meta:
+          id: req_2c9fbbfa5b6242da8013181a2695047a
+          created: 1743084294845
+          modified: 1743086016357
+          isPrivate: false
+          sortKey: -1743083921761
+        method: GET
+        body:
+          mimeType: multipart/form-data
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseHr }}/posts"
+        name: Post
+        meta:
+          id: req_66a7ffe894b648bf9becf56cfdc94e86
+          created: 1743086028179
+          modified: 1743098692976
+          isPrivate: false
+          sortKey: -1743083921711
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "name": "Rodrigo Zandonadi",
+                "email": "rodzandonadi@gmail.com",
+                "password": "Seilad1@",
+                "celular": 12988358895,
+                "active": true,
+                "role": "admin"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Post
+    meta:
+      id: fld_aef54e69605a412c80d0064ddeb16d49
+      created: 1743098668099
+      modified: 1743098668099
+      sortKey: -1743098668099
+    children:
+      - url: "{{ _.baseHr }}/users/67e561de7975061fed37ddbd/posts"
+        name: Post
+        meta:
+          id: req_4f928a48cba04f28a7d061ca14f0bfff
+          created: 1743098673885
+          modified: 1743100662148
+          isPrivate: false
+          sortKey: -1743098673885
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "content": "Como criar posts incríveis com IA. Neste post, vamos explorar como usar inteligência artificial para criar posts de alta qualidade para redes sociais.",
+              "author": "67e561de7975061fed37ddbd", 
+            	"type": "post",
+              "status": "published"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Auth
+    meta:
+      id: fld_63a0f6c6fbb9492888bae2e633feae00
+      created: 1743099741370
+      modified: 1743099741370
+      sortKey: -1743099741371
+  - name: Comments
+    meta:
+      id: fld_fd8c72128f9641e9bb3fe9fbf0c10c79
+      created: 1743101619653
+      modified: 1743101619653
+      sortKey: -1743101619653
+    children:
+      - url: "{{ _.baseHr
+          }}/users/67e561de7975061fed37ddbd/posts/67e59e6f1d68a24eccc3c282/comm\
+          ents"
+        name: Post
+        meta:
+          id: req_769afcb9533d4c16ac20f8d7619390b1
+          created: 1743101628589
+          modified: 1743103878687
+          isPrivate: false
+          sortKey: -1743101628589
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "content": "Ótimo post! Adorei as dicas sobre IA."
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseHr
+          }}/users/67e561de7975061fed37ddbd/posts/67e59e6f1d68a24eccc3c282/comm\
+          ents"
+        name: Get
+        meta:
+          id: req_199cac49c35a443ea6336aa2f51c566d
+          created: 1743103972992
+          modified: 1743104002325
+          isPrivate: false
+          sortKey: -1743100416662
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.baseHr
+          }}/users/67e561de7975061fed37ddbd/posts/67e59e6f1d68a24eccc3c282/comm\
+          ents"
+        name: Post Children Comment
+        meta:
+          id: req_9b4c1758e4b1449fa2e62dc46c057eb2
+          created: 1743104210681
+          modified: 1743104261840
+          isPrivate: false
+          sortKey: -1743101022625.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "content": "Mais um comentário, dentro de outro comentário! Ótimo post! Adorei as dicas sobre IA.",
+            	"parent": "67e5a85fa0c29c7ca391acd7"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - url: "{{ _.baseHr }}/authentication"
+    name: Login
+    meta:
+      id: req_1731cfc4763a4573b4b260680e9a14e8
+      created: 1743099745229
+      modified: 1743101602482
+      isPrivate: false
+      sortKey: -1743099204735
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "rodzandonadi@gmail.com",
+        	"password": "Seilad1@"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_1eddff33181e9da57344b2c200f13cda1b916ba0
+    created: 1743083787064
+    modified: 1743083787064
+environments:
+  name: Base Environment
+  meta:
+    id: env_1eddff33181e9da57344b2c200f13cda1b916ba0
+    created: 1743083787061
+    modified: 1743100637130
+    isPrivate: false
+  data:
+    baseHr: http://localhost:4000/api
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTU2MWRlNzk3NTA2MWZlZDM3ZGRiZCIsImlhdCI6MTc0MzEwMDU5OSwiZXhwIjoxNzQzNzA1Mzk5fQ.JN9MGl7YPnVDzorKsMFHk9_DJ9-gUiFR30KqVNVvjUk
